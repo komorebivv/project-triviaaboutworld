@@ -4,8 +4,8 @@ import Navigation from './components/Navigation';
 import Trivias from './components/Trivias';
 import About from './components/About';
 import Trivia from './components/Trivia';
-import Flags from './components/Flags';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import Countries from './components/Countries';
 
 function App() {
   return (
@@ -28,10 +28,9 @@ function App() {
     <Route exact path="/trivia/:id">
       <Trivia />
       </Route >
-    <Route exact path="/flags">
-    <Flags />
+    <Route exact path="/countries">
+    <Countries />
     </Route>
-    
       </Switch>
     </Router>
   );

@@ -2,9 +2,9 @@ import { useState } from "react";
 import axios from "axios";
 import { useEffect } from "react";
 import Api from "../constants/Api";
-import Button from "./Button";
+import Country from "./Country";
 
-const Flags = () => {
+const Countries = () => {
     const [europe, setEurope] = useState([])
     const [europeButton, setEuropeButton] = useState(false)
     
@@ -43,8 +43,7 @@ const Flags = () => {
         .catch((error) => console.log(error))}, []
       );
 
-        
-
+    
           
         useEffect(() => {
             axios.get(Api.asiaUrl)
@@ -80,7 +79,8 @@ const Flags = () => {
 
     return (
         <div className="container">
-                    <h2>/ FLAGS</h2>
+                    <h2>/ Countries</h2>
+                    <p>Let's select a region and get know a basic information</p>
 
         <div className="buttons">
         <button className={europeButton ? 'btn country-btn' : 'btn'} onClick={() => setEuropeButton(!europeButton)}>Europe</button>
@@ -90,46 +90,21 @@ const Flags = () => {
         <button className={africaButton ? 'btn country-btn' : 'btn'} onClick={() => setAfricaButton(!africaButton)}>Africa</button></div>
         <div className="countries">
         {europeButton && europe.map((country, countryIndex) => {let {name, flag, capital, population} = country;
-        return <div className="country"> 
-        <img src={flag} alt="flag"></img>
-        <h4>{country.name}</h4>
-        <p>{country.capital}</p>
-        <p>{country.population}</p>
-         </div>}
+        return <Country name={country.name} flag={country.flag} population={country.population} capital={country.capital} />}
     )}
         {asiaButton && asia.map((country, countryIndex) => {let {name, flag, capital, population} = country;
-        return <div className="country"> 
-        <img src={flag} alt="flag"></img>
-        <h4>{country.name}</h4>
-        <p>{country.capital}</p>
-        <p>{country.population}</p>
-         </div>}
+        return <Country name={country.name} flag={country.flag} population={country.population} capital={country.capital} />}
     )}
         {americasButton && americas.map((country, countryIndex) => {let {name, flag, capital, population} = country;
-        return <div className="country"> 
-        <img src={flag} alt="flag"></img>
-        <h4>{country.name}</h4>
-        <p>{country.capital}</p>
-        <p>{country.population}</p>
-         </div>}
+        return <Country name={country.name} flag={country.flag} population={country.population} capital={country.capital} />}
     )}
         {oceaniaButton && oceania.map((country, countryIndex) => {let {name, flag, capital, population} = country;
-        return <div className="country"> 
-        <img src={flag} alt="flag"></img>
-        <h4>{country.name}</h4>
-        <p>{country.capital}</p>
-        <p>{country.population}</p>
-         </div>}
+        return <Country name={country.name} flag={country.flag} population={country.population} capital={country.capital} />}
     )}
         {africaButton && africa.map((country, countryIndex) => {let {name, flag, capital, population} = country;
-        return <div className="country"> 
-        <img src={flag} alt="flag"></img>
-        <h4>{country.name}</h4>
-        <p>{country.capital}</p>
-        <p>{country.population}</p>
-         </div>}
+        return <Country name={country.name} flag={country.flag} population={country.population} capital={country.capital} />}
     )}
         </div></div>)
 }
 
-export default Flags
+export default Countries
