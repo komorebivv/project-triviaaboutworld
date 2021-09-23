@@ -2,17 +2,25 @@ import { dataTrivias } from '../data-trivias';
 import Trivia from './Trivia';
 import { useState } from 'react';
 import SearchTrivia from './SearchTrivia';
+import { useEffect } from 'react';
 
 const Trivias = () => {
     const [trivias, setTrivias] = useState(dataTrivias);
     const [inputValue, setInputValue] = useState('');
 
-    const inputValueOnChange = (event) =>{
-        setInputValue(event.target.value);
-        console.log(event.target.value);
+
+    const inputValueOnChange = (e) =>{
+        e.persist();
+        setInputValue(e.target.value);
+    }
+ 
+    
+    useEffect(() => {
+        console.log("Search message inside useEffect: ", inputValue);
         const filteredTrivias = dataTrivias.filter((trivia) => trivia.title.toLowerCase().includes(inputValue.toLowerCase()) )
         setTrivias(filteredTrivias);
-    }
+      }, [inputValue]);
+
    
 
     const removeTrivia = (id) => {
@@ -31,8 +39,7 @@ const Trivias = () => {
     return (
         <div className="container">
             <h2>/ TRIVIAS</h2>
-            <SearchTrivia inputValue ={inputValue} titleFilter={inputValueOnChange} />
-            <div>
+            <SearchTrivia inputValue ={inputValue} titleFilter={inputValueOnChange} /><div>
                 {trivias.map((trivia)=> (<Trivia removeTrivia = {removeTrivia} key={trivia.id} {...trivia}></Trivia>))}
             </div>
         </div>
