@@ -6,6 +6,7 @@ import About from './components/About';
 import Trivia from './components/Trivia';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Countries from './components/Countries';
+import Quiz from './components/Quiz';
 
 function App() {
   return (
@@ -27,6 +28,9 @@ function App() {
     </Route>
     <Route exact path="/trivia/:id">
       <Trivia />
+      </Route >
+      <Route exact path="/quiz">
+      <Quiz />
       </Route >
     <Route exact path="/countries">
     <Countries />

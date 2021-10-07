@@ -46,7 +46,6 @@ body {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-
   }
 
 .carousel-img.activeSlide {
@@ -117,7 +116,6 @@ nav {
 .countries {
   width: 1000px;
   display: flex;
-  /* flex-direction: row; */
   flex-wrap: wrap;
   margin-left: 200px;
 }
@@ -223,4 +221,87 @@ section.trivia {
 .trivia-img {
   width: 400px;
   height: 200px;
+}
+
+
+.quiz {
+  background-color: #252d4a;
+  width: 100%;
+  height: 300px;
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 10px 10px 42px 0px rgba(0, 0, 0, 0.75);
+  margin-top: 120px;
+
+}
+
+.score-section {
+  font-size: 50px;
+  align-items: center;
+  margin-top: 100px;
+
+}
+
+.question-section {
+  width: 100%;
+  position: relative;
+
+}
+
+.question-count {
+  margin-bottom: 20px;
+}
+
+.question-count span {
+  font-size: 28px;
+}
+
+.question-text {
+  margin-bottom: 20px;
+}
+
+.timer-text {
+  background: rgb(230, 153, 12);
+  padding: 15px;
+  margin-top: 20px;
+  margin-right: 20px;
+  border: 5px solid rgb(255, 189, 67);
+  border-radius: 15px;
+  text-align: center;
+}
+
+.answer-section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.quiz-buttons {
+  width: 50%;
+  font-size: 16px;
+  color: #ffffff;
+  background-color: #252d4a;
+  border-radius: 15px;
+  display: flex;
+  padding: 5px;
+  border: 5px solid #234668;
+  cursor: pointer;
+  font-family: 'Gruppo', cursive;
+  text-align: center;
+  margin-bottom: 7px;
+}
+
+quiz-buttons:last-child {
+  margin-bottom: 0px;
+}
+
+
+.quiz-buttons:hover {
+  background-color: #555e7d;
+}
+
+.quiz-buttons:focus {
+  outline: none;
 }
