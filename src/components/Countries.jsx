@@ -5,6 +5,7 @@ import Api from "../constants/Api";
 import Country from "./Country";
 
 const Countries = () => {
+    
 
     const [europe, setEurope] = useState([])
     const [europeButton, setEuropeButton] = useState(false)
@@ -26,13 +27,13 @@ const Countries = () => {
 
 
 
-        // useEffect(() => {
-        // setLoading(true);
-        // axios.get(Api.europeUrl)
-        // .then((response) => {setEurope(response.data) && setLoading(false)}
-        // )
-        // .catch((error) => console.log(error))}
-        //     );
+        useEffect(() => {
+        setLoading(true);
+        axios.get(Api.europeUrl)
+        .then((response) => {setEurope(response.data) && setLoading(false)}
+        )
+        .catch((error) => console.log(error))}
+            );
 
 
 
@@ -52,6 +53,9 @@ const Countries = () => {
         )
             .catch((error) => console.log(error))}, []
           );
+
+          console.log(asia);
+
 
           useEffect(() => {
             axios.get(Api.oceaniaUrl)
