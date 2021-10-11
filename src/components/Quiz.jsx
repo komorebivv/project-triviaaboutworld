@@ -19,14 +19,20 @@ const Quiz = () => {
             setShowScore(true);
         }
 
+    };
 
-    }; 	return (
+    const playAgain = () => {
+        setShowScore(false);
+        setCurrentQuestion(0);
+    }
+    return (
     <div className='quiz'>
                 <div className="container">
 
         {showScore ? (
             <div className='score-section'>
-                You scored {score} out of {questions.length}
+                <h6> You scored {score} out of {questions.length} </h6>
+                <button className="btn" onClick={playAgain}>Try again</button>
             </div>
         ) : (
             <>

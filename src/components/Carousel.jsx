@@ -4,11 +4,13 @@ import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 
 const Carousel = () => {
+
     const [index, setIndex] = useState(0);
+
     const dataSlides = [ 
         {id: 1, textHeader: 'Welcome to TriviaAboutWorld', textParagraph: 'Learn something new about world!', img: require('../img/1.jpg').default },
         {id: 2, textHeader: 'You can learn here...', textParagraph: '...about everything',  img: require('../img/2.jpg').default },
-        {id: 3, textHeader: 'So check this!', textParagraph: 'Click random trivia, or find something...',  img: require('../img/3.jpg').default},
+        {id: 3, textHeader: 'So check this!', textParagraph: 'Do a quiz or read some trivia',  img: require('../img/3.jpg').default},
     ]
 
     const [slides, setSlides] = useState(dataSlides)
@@ -41,7 +43,6 @@ const Carousel = () => {
           <div className="container">
         <div className='slides container'>
             {slides.map((slide, slideIndex) => {let {id, textHeader, textParagraph, img} = slide;
-            // more stuff
             let position = 'carousel-img nextSlide';
             if (slideIndex === index) {
                 console.log(index, slideIndex);
@@ -54,7 +55,7 @@ const Carousel = () => {
                 position = 'carousel-img lastSlide';
               }
             return <div key={id}>
-                    <div className={position} style={{backgroundImage: `url(${img})`}}> 
+                    <div className={position} style={{borderRadius: '30px', backgroundImage: `url(${img})`}}> 
                     <div className="textSlider">
                     <h2> { textHeader } </h2>
                     <p> { textParagraph } </p></div>
@@ -73,8 +74,6 @@ const Carousel = () => {
         </>
     )
 
-} /* <div className="textSlider">
-        <h2> { slides[index].textHeader } </h2>
-        <p> { slides[index].textParagraph } </p></div> */
+} 
 
 export default Carousel

@@ -1,4 +1,3 @@
-import './App.css';
 import Carousel from './components/Carousel';
 import Navigation from './components/Navigation';
 import Trivias from './components/Trivias';
@@ -10,10 +9,6 @@ import Quiz from './components/Quiz';
 
 function App() {
   return (
-    // <div className="App">
-    // <Carousel />
-
-    // </div>
     <Router>
       <Navigation />
       <Switch>

@@ -1,13 +1,24 @@
 @import url('https://fonts.googleapis.com/css2?family=Gruppo&display=swap');
 
 body {
-  box-sizing: border-box;
   display: flex;
   justify-content: center;
   align-content: center;
+  box-sizing: border-box;
   background-image: url('./img/circle-background.jpg');
   font-family: 'Gruppo', cursive;
+}
 
+
+nav {
+  display: flex;
+  padding: 0;
+  align-items: center;
+  margin: 10px 0px 16px 0px;
+}
+
+h6 {
+  margin: 0px 0px 20px 0px;
 }
 
 .container {
@@ -27,8 +38,6 @@ body {
 .slides {
   position: relative;
   overflow: hidden;
-  margin-top: 40px;
-
 }
 
 
@@ -86,9 +95,15 @@ ul {
   margin: 0;
 }
 
-.logo {
-  margin: 0px 450px 0px 0px;
+a .logo {
+  margin: 0px 400px 0px 0px;
   font-size: 20px;
+  align-items: center;
+  display: flex;
+}
+
+.svg {
+  font-size: 500px;
 }
 
 li, a {
@@ -107,11 +122,7 @@ a:hover {
   text-shadow: 5px 5px 10px white;
 }
 
-nav {
-  display: flex;
-  margin: 16px 0px 16px 0px;
-  padding: 0;
-}
+
 
 .countries {
   width: 1000px;
@@ -237,9 +248,10 @@ section.trivia {
 
 .score-section {
   font-size: 50px;
+  display: flex;
   align-items: center;
   margin-top: 100px;
-
+  flex-direction: column;
 }
 
 .question-section {
@@ -293,7 +305,7 @@ section.trivia {
   margin-bottom: 7px;
 }
 
-quiz-buttons:last-child {
+.quiz-buttons:last-child {
   margin-bottom: 0px;
 }
 
@@ -304,4 +316,8 @@ quiz-buttons:last-child {
 
 .quiz-buttons:focus {
   outline: none;
+}
+
+.filter-title {
+  margin-bottom: 40px;
 }
